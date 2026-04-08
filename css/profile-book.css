@@ -1,0 +1,787 @@
+:root {
+  --wood-bg: #6e4034;
+  --paper-text: #1f2230;
+  --paper-shadow: rgba(20, 16, 14, 0.28);
+  --page-width: min(94vw, 1540px);
+  --content-max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body.profile-page {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--wood-bg);
+  color: var(--paper-text);
+  font-family: "Press Start 2P", monospace;
+  image-rendering: pixelated;
+  background-image: url("../img/navigation-bg.png");
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.profile-shell,
+.profile-main {
+  min-height: 100vh;
+}
+
+.profile-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.profile-screen {
+  position: relative;
+  width: var(--page-width);
+  max-width: 1540px;
+  padding: clamp(64px, 7vw, 94px) 0 24px;
+}
+
+.profile-back {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(62px, 6vw, 86px);
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.profile-back:hover,
+.profile-back:focus-visible {
+  transform: translateY(-3px) scale(1.04);
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.25));
+}
+
+.profile-back:focus-visible,
+.book-tab:focus-visible,
+.book-tab img:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.72);
+  outline-offset: 6px;
+}
+
+.book-stage {
+  position: relative;
+  width: 100%;
+}
+
+.book-base {
+  width: 100%;
+  filter: drop-shadow(0 16px 20px var(--paper-shadow));
+}
+
+.book-title {
+  position: absolute;
+  top: clamp(-56px, -1.2vw, -56px);
+  left: 50%;
+  z-index: 3;
+  width: min(48vw, 760px);
+  transform: translateX(-50%);
+}
+
+.book-content {
+  position: absolute;
+  inset: 9.2% 8.4% 10.8% 9.2%;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.4fr) minmax(250px, 1.18fr);
+  grid-template-areas: "stats biography";
+  align-items: start;
+  gap: clamp(120px, 1.9vw, 92px);
+  padding-left: clamp(200px, 25vw, 350px);
+}
+
+.book-column--portrait {
+  position: absolute;
+  top: clamp(132px, 13vw, 176px);
+  left: clamp(-100px, 2vw, -100px);
+  z-index: 3;
+  width: clamp(250px, 29vw, 595px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.portrait-frame {
+  width: 80%;
+  max-width: 590px;
+  aspect-ratio: 0.78;
+  padding: clamp(8px, 0.9vw, 12px);
+  background: #11121c;
+  box-shadow: 0 0 0 3px #11121c;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.book-column--stats {
+  grid-area: stats;
+  align-self: stretch;
+  padding-top: clamp(68px, 2vw, 102px);
+}
+
+.stats-title,
+.avatar-title,
+.biography-title {
+  margin: 0;
+  color: var(--paper-text);
+  line-height: 1.2;
+}
+
+.avatar-title,
+.biography-title {
+  font-size: clamp(18px, 1.7vw, 28px);
+}
+
+.stats-title {
+  font-size: clamp(18px, 1.8vw, 30px);
+  text-align: center;
+}
+
+.avatar-block {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-bottom: clamp(24px, 2.8vw, 40px);
+}
+
+.avatar-image {
+  width: clamp(96px, 9vw, 290px);
+}
+
+.stats-block {
+  display: grid;
+  gap: 12px;
+}
+
+.stats-label,
+.biography-text,
+.placeholder-copy {
+  font-size: clamp(11px, 0.95vw, 16px);
+  line-height: 1.72;
+}
+
+.stats-label {
+  margin: 0;
+}
+
+.stats-block img {
+  width: min(100%, 236px);
+}
+
+.level-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.level-label {
+  margin: 0;
+  font-size: clamp(12px, 1.05vw, 18px);
+  line-height: 1.3;
+}
+
+.level-badge {
+  width: clamp(86px, 6.8vw, 118px);
+}
+
+.book-column--biography {
+  grid-area: biography;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding-top: clamp(68px, 2vw, 102px);
+  padding-right: clamp(88px, 8vw, 120px);
+}
+
+.biography-title {
+  margin-bottom: 2px;
+}
+
+.biography-text {
+  margin: 0;
+  max-width: 38ch;
+}
+
+.hearts-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(10px, 0.95vw, 16px);
+  padding-top: clamp(2px, 0.5vw, 8px);
+}
+
+.hearts-row img {
+  width: clamp(70px, 3vw, 150px);
+  flex: 0 0 auto;
+}
+
+.book-tabs {
+  position: absolute;
+  top: 50%;
+  right: clamp(-8px, -0.6vw, -2px);
+  z-index: 4;
+  display: grid;
+  gap: 12px;
+  transform: translateY(30%);
+}
+
+.book-tab,
+.book-tab--active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(136px, 12vw, 184px);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.book-tab {
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.book-tab:hover,
+.book-tab:focus-visible {
+  transform: translateX(-4px) scale(1.03);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.22));
+}
+
+.book-tab--active {
+  cursor: default;
+}
+
+.placeholder-copy {
+  margin: 0;
+  max-width: 36ch;
+}
+
+@media (max-width: 1180px) {
+  .profile-main {
+    padding: 22px 18px 30px;
+  }
+
+  .profile-screen {
+    width: min(98vw, 1320px);
+    padding-top: 70px;
+  }
+
+  .book-content {
+    inset: 10.2% 8.6% 11.2% 9.2%;
+    gap: 16px;
+    padding-left: clamp(210px, 25vw, 350px);
+  }
+
+  .book-column--biography {
+    padding-right: 86px;
+  }
+
+  .biography-text {
+    max-width: 34ch;
+  }
+}
+
+@media (max-width: 980px) {
+  body.profile-page {
+    overflow-y: auto;
+  }
+
+  .profile-main {
+    align-items: flex-start;
+  }
+
+  .profile-screen {
+    padding-top: 74px;
+    padding-right: 0;
+  }
+
+  .book-stage {
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+  }
+
+  .book-base {
+    display: none;
+  }
+
+  .book-title {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(82vw, 620px);
+    transform: none;
+  }
+
+  .book-content {
+    position: relative;
+    inset: auto;
+    width: min(100%, 880px);
+    padding: 34px 24px 26px;
+    border: 6px solid #8d6354;
+    border-radius: 28px;
+    background: #e4dac2;
+    box-shadow: 0 20px 28px rgba(0, 0, 0, 0.18);
+    grid-template-columns: minmax(220px, 320px) minmax(200px, 260px);
+    grid-template-areas:
+      "portrait stats"
+      "biography biography";
+    gap: 22px;
+  }
+
+  .book-column--portrait,
+  .book-column--stats,
+  .book-column--biography {
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .portrait-frame {
+    max-width: 100%;
+  }
+
+  .book-column--biography {
+    border-top: 4px solid rgba(93, 61, 49, 0.18);
+    padding-top: 18px;
+  }
+
+  .biography-text,
+  .placeholder-copy {
+    max-width: none;
+  }
+
+  .book-tabs {
+    position: relative;
+    top: auto;
+    right: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: min(100%, 880px);
+    transform: none;
+  }
+
+  .book-tab,
+  .book-tab--active {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .profile-main {
+    padding: 18px 14px 26px;
+  }
+
+  .profile-screen {
+    padding-top: 64px;
+  }
+
+  .profile-back {
+    top: 8px;
+    left: 8px;
+    width: 60px;
+  }
+
+  .book-content {
+    padding: 24px 16px 22px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "portrait"
+      "stats"
+      "biography";
+  }
+
+  .avatar-block,
+  .stats-block {
+    justify-items: center;
+  }
+
+  .stats-label,
+  .level-row {
+    justify-self: start;
+    width: min(100%, 236px);
+  }
+
+  .book-tabs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hearts-row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-back,
+  .book-tab {
+    transition: none;
+  }
+}
+
+
+.skills-page .book-title {
+  width: min(44vw, 700px);
+}
+
+.skills-page .book-content {
+  inset: 12.7% 10.8% 15.1% 10.8%;
+  display: block;
+  padding: 0;
+}
+
+.skills-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(44px, 4vw, 86px);
+  width: 100%;
+  height: 100%;
+  align-items: start;
+  justify-items: center;
+  padding: clamp(10px, 1.2vw, 18px) clamp(26px, 2.6vw, 42px) 0;
+}
+
+.skills-column {
+  display: grid;
+  gap: clamp(16px, 1.7vw, 24px);
+  width: min(100%, 470px);
+}
+
+.skill-card {
+  display: grid;
+  grid-template-columns: clamp(74px, 6.7vw, 110px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 1.5vw, 26px);
+}
+
+.skill-card__icon {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.skill-card__content {
+  display: grid;
+  gap: 12px;
+}
+
+.skill-card__label {
+  margin: 0;
+  font-size: clamp(14px, 1.15vw, 20px);
+  line-height: 1.35;
+}
+
+.skill-meter {
+  position: relative;
+  height: clamp(28px, 2.55vw, 40px);
+  width: 100%;
+  background-image: url("../img/scale-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+}
+
+.skill-meter__fill {
+  position: absolute;
+  top: clamp(4px, 0.42vw, 6px);
+  bottom: clamp(4px, 0.42vw, 6px);
+  left: clamp(6px, 0.52vw, 8px);
+  width: calc((100% - clamp(12px, 1.04vw, 16px)) * (var(--skill-value) / 100));
+  background: linear-gradient(180deg, #e2498f 0%, #cc397a 45%, #b92d68 100%);
+  box-shadow: inset 0 -3px 0 rgba(57, 19, 37, 0.26);
+  border-radius: 2px;
+}
+
+.skill-meter__fill::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  right: 3px;
+  height: 20%;
+  background: rgba(255, 202, 229, 0.34);
+}
+
+
+.items-page .book-title {
+  width: min(42vw, 670px);
+}
+
+.items-page .book-content {
+  inset: 12.4% 10.1% 14.4% 10.1%;
+  display: block;
+  padding: 0;
+}
+
+.items-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 450px) minmax(360px, 520px);
+  gap: clamp(42px, 4.2vw, 90px);
+  align-items: start;
+  justify-content: center;
+  height: 100%;
+  padding: clamp(6px, 0.8vw, 12px) clamp(8px, 1.2vw, 18px) 0 clamp(18px, 2vw, 30px);
+}
+
+.items-inventory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 1.3vw, 22px);
+  width: min(100%, 440px);
+  padding: clamp(22px, 1.9vw, 32px);
+  border: 6px solid #11121c;
+  background: #62667d;
+  box-shadow: inset 0 0 0 4px rgba(24, 26, 38, 0.26);
+}
+
+.inventory-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: 11%;
+  border: 5px solid #121626;
+  background: linear-gradient(180deg, #777a92 0%, #656880 100%);
+  box-shadow: inset 0 -8px 0 rgba(18, 22, 38, 0.25);
+  cursor: pointer;
+  transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+}
+
+.inventory-slot img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.inventory-slot:hover,
+.inventory-slot:focus-visible,
+.inventory-slot.is-selected {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+}
+
+.inventory-slot.is-selected {
+  background: linear-gradient(180deg, #8b8fa7 0%, #6f738b 100%);
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.12), inset 0 -8px 0 rgba(18, 22, 38, 0.28);
+}
+
+.inventory-slot:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 4px;
+}
+
+.item-details {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: clamp(18px, 1.7vw, 30px);
+  justify-self: start;
+  padding-top: 8px;
+  padding-left: clamp(18px, 1.8vw, 34px);
+}
+
+.item-preview-frame {
+  display: grid;
+  place-items: center;
+  width: clamp(170px, 16vw, 245px);
+  aspect-ratio: 1;
+  padding: clamp(16px, 1.35vw, 24px);
+  border: 6px solid #11121c;
+  background: linear-gradient(180deg, #7c8098 0%, #666a82 100%);
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.08);
+}
+
+.item-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.item-details-copy {
+  display: grid;
+  gap: 16px;
+  width: min(100%, 470px);
+}
+
+.item-details-title {
+  margin: 0;
+  font-size: clamp(18px, 1.35vw, 28px);
+  line-height: 1.28;
+}
+
+.item-details-text {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(11px, 0.95vw, 15px);
+  line-height: 1.68;
+}
+
+.item-meter {
+  position: relative;
+  height: clamp(32px, 2.55vw, 42px);
+  width: min(100%, 410px);
+  background-image: url("../img/scale-background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+}
+
+.item-meter__fill {
+  position: absolute;
+  top: clamp(4px, 0.42vw, 6px);
+  bottom: clamp(4px, 0.42vw, 6px);
+  left: clamp(6px, 0.52vw, 8px);
+  width: calc((100% - clamp(12px, 1.04vw, 16px)) * (var(--item-value) / 100));
+  background: linear-gradient(180deg, #e2498f 0%, #cc397a 45%, #b92d68 100%);
+  box-shadow: inset 0 -3px 0 rgba(57, 19, 37, 0.26);
+  border-radius: 2px;
+}
+
+.item-meter__fill::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  right: 3px;
+  height: 20%;
+  background: rgba(255, 202, 229, 0.34);
+}
+
+@media (max-width: 1180px) {
+  .items-page .book-content {
+    inset: 13.1% 9.6% 14.6% 9.6%;
+  }
+
+  .items-layout {
+    grid-template-columns: minmax(260px, 370px) minmax(290px, 1fr);
+    gap: 30px;
+    padding-inline: 8px;
+  }
+
+  .items-inventory {
+    width: min(100%, 370px);
+  }
+
+  .skills-page .book-content {
+    inset: 14% 10.5% 15.8% 10.5%;
+  }
+
+  .skills-layout {
+    gap: 30px;
+    padding-inline: 16px;
+  }
+
+  .skills-column {
+    width: min(100%, 370px);
+  }
+}
+
+@media (max-width: 900px) {
+  .items-page .book-title {
+    width: min(56vw, 520px);
+  }
+
+  .items-page .book-content {
+    inset: 13.2% 8.8% 14.4% 8.8%;
+  }
+
+  .items-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-content: start;
+  }
+
+  .items-inventory,
+  .item-details-copy {
+    width: 100%;
+  }
+
+  .item-details {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .item-details-text {
+    max-width: none;
+  }
+
+  .item-meter {
+    width: min(100%, 360px);
+  }
+
+  .skills-page .book-title {
+    width: min(58vw, 560px);
+  }
+
+  .skills-page .book-content {
+    inset: 14% 9.5% 14.5% 9.5%;
+  }
+
+  .skills-layout {
+    gap: 20px;
+    padding-top: 4px;
+    padding-inline: 8px;
+  }
+
+  .skill-card {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .items-page .book-content {
+    inset: 12.2% 7% 12.2% 7%;
+  }
+
+  .items-layout {
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  .items-inventory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 14px;
+  }
+
+  .skills-page .book-content {
+    inset: 12.5% 8% 12% 8%;
+  }
+
+  .skills-layout {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    height: 100%;
+    align-content: start;
+    padding-right: 10px;
+  }
+
+  .skills-column {
+    width: 100%;
+  }
+}

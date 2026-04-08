@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project page for the Foxed 2D platformer by Elizaveta Vdovicheva.">
+  <title>Platformer — Foxed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/project-page.css">
+  <link rel="stylesheet" href="css/site-loader.css">
+</head>
+<body class="project-page project-page--platformer">
+  <button class="project-menu-button" id="projectMenuButton" type="button" aria-haspopup="dialog" aria-controls="projectMenuDialog" aria-expanded="false">
+    <img src="img/menu-button.png" alt="Menu" onerror="this.remove(); this.parentElement.classList.add('is-fallback')">
+    <span class="project-menu-button__fallback">MENU</span>
+  </button>
+
+  <div class="project-menu-overlay is-hidden" id="projectMenuOverlay" role="dialog" aria-modal="true" aria-labelledby="projectMenuTitle">
+    <div class="project-menu-panel" id="projectMenuDialog">
+      <h2 class="project-menu-title" id="projectMenuTitle">Menu</h2>
+      <div class="project-menu-actions">
+        <a class="project-menu-action" href="index.html">Main menu</a>
+        <a class="project-menu-action" href="navigation.html">Navigation</a>
+        <button class="project-menu-action project-menu-action--disabled" type="button" disabled aria-disabled="true">Next level</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-scrollbar" aria-hidden="true">
+    <button class="project-scrollbar__thumb" id="projectScrollThumb" type="button" tabindex="-1">
+      <img src="img/slider-image.png" alt="" onerror="this.remove(); this.parentElement.classList.add('is-fallback')">
+      <span class="project-scrollbar__thumb-fallback"></span>
+    </button>
+  </div>
+
+  <main class="project-main">
+    <section class="project-hero" aria-labelledby="projectTitlePlatformer">
+      <img
+        class="project-hero__background"
+        src="img/background-first-project.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <div class="project-hero__inner project-shell-width">
+        <div class="project-title-stack">
+          <div class="project-title-line">
+            <img
+              class="project-title-image project-title-image--platformer"
+              id="projectTitlePlatformer"
+              src="img/title-platformer.png"
+              alt="PLATFORMER"
+              onerror="this.classList.add('is-hidden'); this.nextElementSibling.classList.remove('is-hidden')"
+            >
+            <h1 class="project-title-fallback is-hidden">PLATFORMER</h1>
+          </div>
+
+          <div class="project-title-line project-title-line--foxed">
+            <img
+              class="project-title-image project-title-image--foxed"
+              src="img/title-foxed.png"
+              alt="FOXED"
+              onerror="this.classList.add('is-hidden'); this.nextElementSibling.classList.remove('is-hidden')"
+            >
+            <p class="project-title-fallback project-title-fallback--foxed is-hidden">FOXED</p>
+          </div>
+        </div>
+
+        <div class="project-intro-grid">
+          <figure class="project-image-frame project-image-frame--hero">
+            <img src="img/game1-screenshot1.png" alt="Screenshot of the Foxed platformer gameplay">
+          </figure>
+
+          <section class="project-copy-card project-copy-card--summary" aria-label="Project summary">
+            <p>
+              The project was developed as a 2D platformer using HTML, CSS, and JavaScript web technologies.
+              The technical aspects included the gameplay logic for character movement, the collision system, item collection, interactions with obstacles and enemies, as well as basic animation and screen transitions.
+            </p>
+            <p>
+              This is a story about one little fox, who became the last warrior and saviour of the world
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section project-section--story">
+      <div class="project-shell-width">
+        <section class="scroll-panel scroll-panel--story" aria-labelledby="aboutProjectTitle">
+          <img class="scroll-panel__bg" src="img/dialogue-image.png" alt="" aria-hidden="true">
+          <div class="scroll-panel__content scroll-panel__content--story">
+            <h2 class="scroll-panel__title" id="aboutProjectTitle">About Project</h2>
+            <p>
+              In a quiet valley where the grass once shone like emerald silk, the apple trees were beginning to die.
+              Their branches grew thin, their leaves turned pale, and the sweet scent of fruit was fading from the wind.
+              The old animals whispered that only the Great Apple Tree, standing far beyond the hills and the dark forest,
+              still carried the living apples that could save the valley. So one morning, a young fox cub with bright eyes
+              and a brave heart left his home and set out alone, determined to reach the sacred tree before his homeland
+              withered away completely.
+            </p>
+            <p>
+              The journey was not easy. Along the winding paths and broken cliffs, the little fox had to gather every apple
+              he could find, for each one held a spark of strength and hope. But the forest was watched by hungry wolves,
+              swift and silent, their shadows moving between the trees. The cub had to run, leap, and dodge through danger,
+              trusting his quick paws and clever mind. Though fear followed him like a cold wind, he never turned back,
+              because he carried the future of the valley in his small beating heart.
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="project-divider project-shell-width" aria-hidden="true">
+      <img src="img/fox-run-image.png" alt="">
+    </section>
+
+    <section class="project-section project-section--development">
+      <div class="project-shell-width project-development-grid">
+        <section class="project-copy-card" aria-labelledby="developmentTitle">
+          <h2 class="project-copy-card__title" id="developmentTitle">Development</h2>
+          <p>
+            The project was developed as a 2D platformer integrated into a portfolio website and implemented with HTML, CSS,
+            and JavaScript. From a technical perspective, the work included building the core gameplay systems: player movement,
+            jumping, combat interactions, collision detection, level logic, collectible items, and enemy avoidance mechanics.
+            Particular attention was given to the structure of the codebase, with gameplay states, interface elements,
+            navigation between pages, and visual components organized in a way that supports further development and simplifies future refinement.
+          </p>
+          <p>
+            In addition to the gameplay layer, the project also involved the implementation of screen transitions,
+            interface navigation, responsive layout adjustments, and the integration of visual assets and animations into a unified interactive environment.
+            Overall, the project was completed as a functional browser-based game module that combines technical implementation,
+            visual presentation, and extensibility, making it suitable both as an interactive portfolio element and as a foundation for further feature development.
+          </p>
+        </section>
+
+        <section class="project-side-stack" aria-label="Preview and timeline">
+          <figure class="project-image-frame project-image-frame--green project-image-frame--preview">
+            <img
+              id="projectPreviewGif"
+              src="img/game1-preview.gif"
+              data-candidates="img/game1-preview.gif|img/game1-gif.gif|img/platformer-preview.gif|img/foxed-preview.gif|img/platformer.gif"
+              data-fallback="img/game1-screenshot1.png"
+              alt="Animated preview of the Foxed platformer"
+            >
+          </figure>
+
+          <section class="project-timeframe" aria-labelledby="timeframeTitle">
+            <h3 class="project-timeframe__title" id="timeframeTitle">Development timeframe</h3>
+            <p>
+              04.01.23 - 12.01.23 / development and elaboration of the plot<br>
+              15.01.23 - 27.01.23 / Creation of all necessary drawings and design development<br>
+              27.01.23 - 23.02.23 / Working with PyCharm
+            </p>
+          </section>
+
+          <figure class="project-image-frame project-image-frame--green project-image-frame--code">
+            <img src="img/game1-screenshot2.png" alt="Screenshot of the Foxed project code">
+          </figure>
+        </section>
+
+        <figure class="project-image-frame project-image-frame--idle">
+          <img
+            id="foxIdlePreview"
+            src="img/fox_idle_0000.png"
+            alt="Animated idle fox sprite"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-divider project-divider--wolves project-shell-width" aria-hidden="true">
+      <img src="img/wolf-run-image.png" alt="">
+    </section>
+  </main>
+
+  <script src="js/project-platformer.js"></script>
+  <script src="js/site-loader.js"></script>
+</body>
+</html>

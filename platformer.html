@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Первый платформенный уровень игрового портфолио Елизаветы Вдовичевой.">
+  <title>Level 1 — Portfolio Platformer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/platformer.css">
+  <link rel="stylesheet" href="css/site-loader.css">
+</head>
+<body class="platformer-page">
+  <main class="platformer-shell">
+    <div class="game-frame" aria-label="Игровой экран первого уровня платформера">
+      <canvas id="gameCanvas" width="1920" height="1080" aria-label="2D платформер"></canvas>
+
+      <button class="ui-button ui-button--menu" id="menuButton" type="button" aria-haspopup="dialog" aria-controls="pauseModal">
+        <img src="img/menu-button.png" alt="Меню" onerror="this.remove(); this.parentElement.classList.add('is-fallback')">
+        <span class="ui-fallback-label">MENU</span>
+      </button>
+
+      <div class="overlay is-hidden" id="tutorialOverlay" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+        <div class="modal-panel modal-panel--tutorial">
+          <button class="ui-button ui-button--close" id="closeTutorialButton" type="button" aria-label="Закрыть обучение">
+            <img src="img/close-button.png" alt="Закрыть" onerror="this.remove(); this.parentElement.classList.add('is-fallback')">
+            <span class="ui-fallback-label">X</span>
+          </button>
+          <h2 class="modal-title" id="tutorialTitle">Обучение</h2>
+          <div class="tutorial-content">
+            <img src="img/platformer/shared/ui/tutorial-level-1.png" alt="Подсказки по управлению первого уровня" onerror="this.classList.add('is-hidden')">
+            <div class="tutorial-copy">
+              <p>Управление: A / D или стрелки — движение, Space — прыжок. C или Ctrl — присесть / встать.</p>
+              <p>E или левая кнопка мыши — удар мечом. Q или правая кнопка мыши — дальняя атака.</p>
+              <p>F — взаимодействие с сундуком. Коробки можно толкать, а на переключатель нужно поставить ящик.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay is-hidden" id="pauseModal" role="dialog" aria-modal="true" aria-labelledby="pauseTitle">
+        <div class="modal-panel">
+          <h2 class="modal-title" id="pauseTitle">Меню</h2>
+          <div class="modal-actions">
+            <button class="pixel-action" id="restartLevelButton" type="button">Перезапустить уровень</button>
+            <button class="pixel-action" id="openTutorialButton" type="button">Обучение</button>
+            <button class="pixel-action" id="goNavigationButton" type="button">Вернуться к навигации</button>
+            <button class="pixel-action" id="goProjectButton" type="button">Перейти к проекту</button>
+            <button class="pixel-action pixel-action--secondary" id="resumeGameButton" type="button">Продолжить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay is-hidden" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="modal-panel">
+          <h2 class="modal-title" id="confirmTitle">Подтверждение</h2>
+          <p class="modal-copy" id="confirmText">Вы точно уверены?</p>
+          <div class="modal-actions modal-actions--two-column">
+            <button class="pixel-action" id="confirmYesButton" type="button">Да</button>
+            <button class="pixel-action pixel-action--secondary" id="confirmNoButton" type="button">Нет</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay is-hidden" id="levelCompleteModal" role="dialog" aria-modal="true" aria-labelledby="completeTitle">
+        <div class="modal-panel">
+          <h2 class="modal-title" id="completeTitle">Сундук открыт</h2>
+          <p class="modal-copy">Первый уровень пройден. Здесь потом можно открыть кейс проекта или сразу вернуться на карту.</p>
+          <div class="modal-actions">
+            <button class="pixel-action" id="completeProjectButton" type="button">Перейти к проекту</button>
+            <button class="pixel-action pixel-action--secondary" id="completeNavigationButton" type="button">К навигации</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/site-loader.js"></script>
+  <script src="js/platformer/platformer.bundle.js"></script>
+</body>
+</html>

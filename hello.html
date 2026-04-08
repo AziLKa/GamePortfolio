@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Приветственный экран портфолио Елизаветы Вдовичевой.">
+  <title>Hello — Vdovicheva Elizaveta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/hello.css">
+  <link rel="stylesheet" href="css/site-loader.css">
+</head>
+<body class="hello-page">
+  <a class="hello-page-back" href="index.html" aria-label="Back to main page">
+    <img src="img/back-button.png" alt="Back" width="90" height="90">
+  </a>
+
+  <div class="page-shell hello-shell">
+    <main class="hello-main">
+      <section class="hello-screen" aria-labelledby="hello-title">
+        <img
+          class="hello-title-image"
+          id="hello-title"
+          src="img/title-hello.png"
+          alt="HELLO"
+          width="708"
+          height="160"
+        >
+
+        <img
+          class="hello-avatar"
+          src="img/avatar-idle.png"
+          alt="Пиксельный персонаж Елизаветы"
+          width="250"
+          height="416"
+        >
+
+        <div class="hello-dialogue" aria-label="Приветственное сообщение">
+          <img
+            class="hello-dialogue-image"
+            src="img/dialogue-image.png"
+            alt=""
+            aria-hidden="true"
+            width="920"
+            height="335"
+          >
+
+          <div class="hello-dialogue-content">
+            <p class="hello-dialogue-text">I’m Liza! Let’s settle before our journey?</p>
+
+            <div class="hello-actions">
+              <button class="hello-action hello-action--secondary" type="button" id="helloYesButton" aria-label="Yes">
+                <img src="img/yes-button.png" alt="YES" width="180" height="82">
+              </button>
+
+              <a class="hello-action hello-action--primary" href="start-the-game.html" aria-label="Open Start the Game page">
+                <img src="img/start-button.png" alt="START" width="243" height="82">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/hello.js"></script>
+  <script src="js/site-loader.js"></script>
+</body>
+</html>

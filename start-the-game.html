@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Страница начала игры портфолио Елизаветы Вдовичевой.">
+  <title>Start the Game — Vdovicheva Elizaveta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/hello.css">
+  <link rel="stylesheet" href="css/site-loader.css">
+</head>
+<body class="hello-page start-game-page">
+  <div class="page-shell hello-shell">
+    <main class="hello-main">
+      <section class="hello-screen" aria-labelledby="start-game-title">
+        <img
+          class="hello-title-image"
+          id="start-game-title"
+          src="img/title-start-the-game.png"
+          alt="START THE GAME"
+          width="708"
+          height="250"
+        >
+
+        <img
+          class="hello-avatar"
+          src="img/avatar-idle.png"
+          alt="Пиксельный персонаж Елизаветы"
+          width="250"
+          height="416"
+        >
+
+        <div class="hello-dialogue" aria-label="Старт игры">
+          <img
+            class="hello-dialogue-image"
+            src="img/dialogue-image.png"
+            alt=""
+            aria-hidden="true"
+            width="920"
+            height="335"
+          >
+
+          <div class="hello-dialogue-content">
+            <p class="hello-dialogue-text">We are ready to the Journey!</p>
+
+            <div class="hello-actions">
+              <button class="hello-action hello-action--secondary hello-action--image" type="button" id="startGameBackButton" aria-label="Back">
+                <img src="img/back-button-horizontal.png" alt="BACK" width="243" height="82">
+              </button>
+
+              <a class="hello-action hello-action--primary" href="platformer.html" aria-label="Start the game">
+                <img src="img/start-button.png" alt="START" width="243" height="82">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/start-the-game.js"></script>
+  <script src="js/site-loader.js"></script>
+</body>
+</html>

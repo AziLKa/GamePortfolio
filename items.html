@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Items page of Elizaveta Vdovicheva portfolio.">
+  <title>Items — Vdovicheva Elizaveta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/profile-book.css">
+  <link rel="stylesheet" href="css/site-loader.css">
+</head>
+<body class="profile-page items-page">
+  <div class="profile-shell">
+    <main class="profile-main">
+      <section class="profile-screen" aria-labelledby="items-title">
+        <a class="profile-back" href="hello.html" aria-label="Back to Hello page">
+          <img src="img/back-button.png" alt="Back" width="90" height="90">
+        </a>
+
+        <div class="book-stage">
+          <img class="book-title" id="items-title" src="img/title-items.png" alt="ITEMS" width="764" height="122">
+          <img class="book-base" src="img/book-image.png" alt="" aria-hidden="true" width="1559" height="1104">
+
+          <div class="book-content items-book-content">
+            <div class="items-layout" aria-label="Software inventory">
+              <section class="items-inventory" aria-label="Inventory slots with software tools">
+                <button
+                  class="inventory-slot"
+                  type="button"
+                  data-item-name="Unity"
+                  data-item-value="35"
+                  data-item-image="img/unity.png"
+                  data-item-description="A powerful real-time engine for building interactive worlds, gameplay systems, and polished game prototypes."
+                  aria-label="Select Unity"
+                >
+                  <img src="img/unity.png" alt="Unity" width="96" height="96">
+                </button>
+
+                <button
+                  class="inventory-slot is-selected"
+                  type="button"
+                  data-item-name="Photoshop"
+                  data-item-value="60"
+                  data-item-image="img/photoshop.png"
+                  data-item-description="A professional raster graphics editor used for photo editing, visual polish, interface details, and promotional art."
+                  aria-label="Select Photoshop"
+                >
+                  <img src="img/photoshop.png" alt="Photoshop" width="96" height="96">
+                </button>
+
+                <button
+                  class="inventory-slot"
+                  type="button"
+                  data-item-name="Clip Studio Paint"
+                  data-item-value="85"
+                  data-item-image="img/clipstudio.png"
+                  data-item-description="A drawing and illustration tool that is especially effective for expressive line art, painting, and character-focused visuals."
+                  aria-label="Select Clip Studio Paint"
+                >
+                  <img src="img/clipstudio.png" alt="Clip Studio Paint" width="96" height="96">
+                </button>
+
+                <button
+                  class="inventory-slot"
+                  type="button"
+                  data-item-name="Illustrator"
+                  data-item-value="75"
+                  data-item-image="img/illustrator.png"
+                  data-item-description="A vector design application for icons, scalable graphics, branding elements, and clean interface assets."
+                  aria-label="Select Illustrator"
+                >
+                  <img src="img/illustrator.png" alt="Illustrator" width="96" height="96">
+                </button>
+
+                <button
+                  class="inventory-slot"
+                  type="button"
+                  data-item-name="Figma"
+                  data-item-value="65"
+                  data-item-image="img/figma.png"
+                  data-item-description="A collaborative UI and UX design platform for wireframes, interface layouts, prototypes, and design systems."
+                  aria-label="Select Figma"
+                >
+                  <img src="img/figma.png" alt="Figma" width="96" height="96">
+                </button>
+
+                <button
+                  class="inventory-slot"
+                  type="button"
+                  data-item-name="Blender"
+                  data-item-value="75"
+                  data-item-image="img/blender.png"
+                  data-item-description="A 3D content creation suite for modeling, scene blocking, stylized assets, animation, and rendering experiments."
+                  aria-label="Select Blender"
+                >
+                  <img src="img/blender.png" alt="Blender" width="96" height="96">
+                </button>
+              </section>
+
+              <section class="item-details" aria-live="polite" aria-label="Selected software details">
+                <div class="item-preview-frame">
+                  <img
+                    class="item-preview-image"
+                    id="itemPreviewImage"
+                    src="img/photoshop.png"
+                    alt="Photoshop"
+                    width="180"
+                    height="180"
+                  >
+                </div>
+
+                <div class="item-details-copy">
+                  <h2 class="item-details-title" id="itemPreviewName">Photoshop</h2>
+
+                  <div class="item-meter" id="itemPreviewMeter" style="--item-value: 60;" aria-label="Photoshop 60 percent">
+                    <span class="item-meter__fill"></span>
+                  </div>
+
+                  <p class="item-details-text" id="itemPreviewDescription">
+                    A professional raster graphics editor used for photo editing, visual polish, interface details, and promotional art.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <nav class="book-tabs" aria-label="Resume section navigation">
+            <a class="book-tab" href="start-the-game.html" aria-label="Open Start the Game page">
+              <img src="img/start-button.png" alt="Start" width="281" height="83">
+            </a>
+            <a class="book-tab" href="resume.html" aria-label="Open resume page" data-skip-loader="true">
+              <img src="img/resume-button.png" alt="Resume" width="281" height="83">
+            </a>
+            <a class="book-tab" href="skills.html" aria-label="Open skills page" data-skip-loader="true">
+              <img src="img/skills-button.png" alt="Skills" width="281" height="83">
+            </a>
+            <span class="book-tab--active" aria-current="page">
+              <img src="img/items-button-used.png" alt="Items" width="281" height="83">
+            </span>
+          </nav>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/items.js"></script>
+  <script src="js/site-loader.js"></script>
+</body>
+</html>
